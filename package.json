@@ -1,0 +1,28 @@
+{
+  "name": "ids-tree-backend",
+  "version": "1.0.0",
+  "description": "汉字 IDS 部件树展开与引用来源核验后端（TypeScript + Node.js + SQLite，仅 API 与 CLI）",
+  "private": true,
+  "license": "MIT",
+  "type": "commonjs",
+  "bin": {
+    "ids": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.test.json && node --test \"dist-test/test/*.test.js\"",
+    "start": "node dist/server.js",
+    "dev": "tsx src/server.ts",
+    "demo": "tsx scripts/demo.ts",
+    "cli": "tsx src/cli.ts",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true});require('fs').rmSync('dist-test',{recursive:true,force:true})\""
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.2"
+  }
+}
